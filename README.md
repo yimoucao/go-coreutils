@@ -15,4 +15,4 @@ ONLY use Golang standard library
 
 |module | difficulty | comments |
 |-------|------------|----------|
-|uptime | ** | macOS, windows syscall API |
+|uptime | ** | macOS, windows syscall API, implement utmpx |
