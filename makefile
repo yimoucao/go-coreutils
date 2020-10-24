@@ -1,6 +1,6 @@
 
 GO = go
-TARGETS = mkdir true false yes whoami uptime pwd base64 base32 head
+TARGETS = arch basename cat date dirname echo uname mkdir tail true false yes who whoami uptime pwd base64 base32 head
 
 
 .PHONY: all

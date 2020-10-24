@@ -1,105 +1,105 @@
-- **chcon**	File utilities	Changes file security context (SELinux)
-- **chgrp**	File utilities	Changes file group ownership
-- **chown**	File utilities	Changes file ownership
-- **chmod**	File utilities	Changes the permissions of a file or directory
-- **cp**	File utilities	Copies a file or directory
-- **dd**	File utilities	Copies and converts a file
-- **df**	File utilities	Shows disk free space on file systems
-- **dir**	File utilities	Is exactly like "ls -C -b". (Files are by default listed in columns and sorted vertically.)
-- **dircolors**	File utilities	Set up color for ls
-- **install**	File utilities	Copies files and set attributes
-- **ln**	File utilities	Creates a link to a file
-- **ls**	File utilities	Lists the files in a directory
-- __mkdir__	File utilities	Creates a directory
-- **mkfifo**	File utilities	Makes named pipes (FIFOs)
-- **mknod**	File utilities	Makes block or character special files
-- **mktemp**	File utilities	Creates a temporary file or directory
-- **mv**	File utilities	Moves files or rename files
-- **realpath**	File utilities	Returns the resolved absolute or relative path for a file
-- **rm**	File utilities	Removes (deletes) files, directories, device nodes and symbolic links
-- **rmdir**	File utilities	Removes empty directories
-- **shred**	File utilities	Overwrites a file to hide its contents, and optionally deletes it
-- **sync**	File utilities	Flushes file system buffers
-- **touch**	File utilities	Changes file timestamps
-- **truncate**	File utilities	Shrink or extend the size of a file to the specified size
-- **vdir**	File utilities	Is exactly like "ls -l -b". (Files are by default listed in long format.) (not avail in macOS)
-- **b2sum**	Text utilities	Computes and checks BLAKE2b message digest (not avail in macOS)
-- __base32__	Text utilities	Encodes or decodes Base32, and prints result to standard output
-- __base64__	Text utilities	Encodes or decodes Base64, and prints result to standard output
-- **cat**	Text utilities	Concatenates and prints files on the standard output
-- **cksum**	Text utilities	Checksums and count the bytes in a file
-- **comm**	Text utilities	Compares two sorted files line by line
-- **csplit**	Text utilities	Splits a file into sections determined by context lines
-- **cut**	Text utilities	Removes sections from each line of files
-- **expand**	Text utilities	Converts tabs to spaces
-- **fmt**	Text utilities	Simple optimal text formatter
-- **fold**	Text utilities	Wraps each input line to fit in specified width
-- **head**	Text utilities	Outputs the first part of files
-- **join**	Text utilities	Joins lines of two files on a common field
-- **md5sum**	Text utilities	Computes and checks MD5 message digest
-- **nl**	Text utilities	Numbers lines of files
-- **numfmt**	Text utilities	Reformat numbers
-- **od**	Text utilities	Dumps files in octal and other formats
-- **paste**	Text utilities	Merges lines of files
-- **ptx**	Text utilities	Produces a permuted index of file contents
-- **pr**	Text utilities	Converts text files for printing
-- **sha1sum**,
-- **sha224sum**,
-- **sha256sum**,
-- **sha384sum**,
-- **sha512sum**	Text utilities	Computes and checks SHA-1/SHA-2 message digests
-- **shuf**	Text utilities	generate random permutations
-- **sort**	Text utilities	sort lines of text files
-- **split**	Text utilities	Splits a file into pieces
-- **sum**	Text utilities	Checksums and counts the blocks in a file
-- **tac**	Text utilities	Concatenates and prints files in reverse order line by line
-- **tail**	Text utilities	Outputs the last part of files
-- **tr**	Text utilities	Translates or deletes characters
-- **tsort**	Text utilities	Performs a topological sort
-- **unexpand**	Text utilities	Converts spaces to tabs
-- **uniq**	Text utilities	Removes duplicate lines from a sorted file
-- **wc**	Text utilities	Prints the number of bytes, words, and lines in files
-- **arch**	Shell utilities	Prints machine hardware name (same as uname -m)
-- **basename**	Shell utilities	Removes the path prefix from a given pathname
-- **chroot**	Shell utilities	Changes the root directory
-- **date**	Shell utilities	Prints or sets the system date and time
-- **dirname**	Shell utilities	Strips non-directory suffix from file name
-- **du**	Shell utilities	Shows disk usage on file systems
-- **echo**	Shell utilities	Displays a specified line of text
-- **env**	Shell utilities	Displays and modifies environment variables
-- **expr**	Shell utilities	Evaluates expressions
-- **factor**	Shell utilities	Factors numbers
-- __false__	Shell utilities	Does nothing, but exits unsuccessfully
-- **groups**	Shell utilities	Prints the groups of which the user is a member
-- **hostid**	Shell utilities	Prints the numeric identifier for the current host
-- **id**	Shell utilities	Prints real or effective UID and GID
-- **link**	Shell utilities	Creates a link to a file
-- **logname**	Shell utilities	Print the user's login name
-- **nice**	Shell utilities	Modifies scheduling priority
-- **nohup**	Shell utilities	Allows a command to continue running after logging out
-- **nproc**	Shell utilities	Queries the number of (active) processors
-- **pathchk**	Shell utilities	Checks whether file names are valid or portable
-- **pinky**	Shell utilities	A lightweight version of finger
-- **printenv**	Shell utilities	Prints environment variables
-- **printf**	Shell utilities	Formats and prints data
-- __pwd__	Shell utilities	Prints the current working directory
-- **readlink**	Shell utilities	Displays value of a symbolic link
-- **runcon**	Shell utilities	Run command with specified security context
-- **seq**	Shell utilities	Prints a sequence of numbers
-- **sleep**	Shell utilities	Delays for a specified amount of time
-- **stat**	Shell utilities	Returns data about an inode
-- **stdbuf**	Shell utilities	Controls buffering for commands that use stdio
-- **stty**	Shell utilities	Changes and prints terminal line settings
-- **tee**	Shell utilities	Sends output to multiple files
-- **test**	Shell utilities	Evaluates an expression
-- **timeout**	Shell utilities	Run a command with a time limit
-- __true__	Shell utilities	Does nothing, but exits successfully
-- **tty**	Shell utilities	Prints terminal name
-- **uname**	Shell utilities	Prints system information
-- **unlink**	Shell utilities	Removes the specified file using the unlink function
-- **uptime**	Shell utilities	Tells how long the system has been running
-- **users**	Shell utilities	Prints the user names of users currently logged into the current host
-- **who**	Shell utilities	Prints a list of all users currently logged in
-- __whoami__	Shell utilities	Prints the effective userid
-- __yes__	Shell utilities	Prints a string repeatedly
-- **[**	Other Utilities	A synonym for test; this program permits expressions like [ expression ].
+the list is from [here](https://github.com/coreutils/coreutils/blob/master/doc/coreutils.texi)
+
+* arch: (coreutils)arch invocation.             Print machine hardware name.
+* b2sum: (coreutils)b2sum invocation.           Print or check BLAKE2 digests.
+* base32: (coreutils)base32 invocation.         Base32 encode/decode data.
+* base64: (coreutils)base64 invocation.         Base64 encode/decode data.
+* basename: (coreutils)basename invocation.     Strip directory and suffix.
+* basenc: (coreutils)basenc invocation.         Encoding/decoding of data.
+* cat: (coreutils)cat invocation.               Concatenate and write files.
+* chcon: (coreutils)chcon invocation.           Change SELinux CTX of files.
+* chgrp: (coreutils)chgrp invocation.           Change file groups.
+* chmod: (coreutils)chmod invocation.           Change access permissions.
+* chown: (coreutils)chown invocation.           Change file owners and groups.
+* chroot: (coreutils)chroot invocation.         Specify the root directory.
+* cksum: (coreutils)cksum invocation.           Print POSIX CRC checksum.
+* comm: (coreutils)comm invocation.             Compare sorted files by line.
+* cp: (coreutils)cp invocation.                 Copy files.
+* csplit: (coreutils)csplit invocation.         Split by context.
+* cut: (coreutils)cut invocation.               Print selected parts of lines.
+* date: (coreutils)date invocation.             Print/set system date and time.
+* dd: (coreutils)dd invocation.                 Copy and convert a file.
+* df: (coreutils)df invocation.                 Report file system disk usage.
+* dir: (coreutils)dir invocation.               List directories briefly.
+* dircolors: (coreutils)dircolors invocation.   Color setup for ls.
+* dirname: (coreutils)dirname invocation.       Strip last file name component.
+* du: (coreutils)du invocation.                 Report on disk usage.
+* echo: (coreutils)echo invocation.             Print a line of text.
+* env: (coreutils)env invocation.               Modify the environment.
+* expand: (coreutils)expand invocation.         Convert tabs to spaces.
+* expr: (coreutils)expr invocation.             Evaluate expressions.
+* factor: (coreutils)factor invocation.         Print prime factors
+* false: (coreutils)false invocation.           Do nothing, unsuccessfully.
+* fmt: (coreutils)fmt invocation.               Reformat paragraph text.
+* fold: (coreutils)fold invocation.             Wrap long input lines.
+* groups: (coreutils)groups invocation.         Print group names a user is in.
+* head: (coreutils)head invocation.             Output the first part of files.
+* hostid: (coreutils)hostid invocation.         Print numeric host identifier.
+* hostname: (coreutils)hostname invocation.     Print or set system name.
+* id: (coreutils)id invocation.                 Print user identity.
+* install: (coreutils)install invocation.       Copy files and set attributes.
+* join: (coreutils)join invocation.             Join lines on a common field.
+* kill: (coreutils)kill invocation.             Send a signal to processes.
+* link: (coreutils)link invocation.             Make hard links between files.
+* ln: (coreutils)ln invocation.                 Make links between files.
+* logname: (coreutils)logname invocation.       Print current login name.
+* ls: (coreutils)ls invocation.                 List directory contents.
+* md5sum: (coreutils)md5sum invocation.         Print or check MD5 digests.
+* mkdir: (coreutils)mkdir invocation.           Create directories.
+* mkfifo: (coreutils)mkfifo invocation.         Create FIFOs (named pipes).
+* mknod: (coreutils)mknod invocation.           Create special files.
+* mktemp: (coreutils)mktemp invocation.         Create temporary files.
+* mv: (coreutils)mv invocation.                 Rename files.
+* nice: (coreutils)nice invocation.             Modify niceness.
+* nl: (coreutils)nl invocation.                 Number lines and write files.
+* nohup: (coreutils)nohup invocation.           Immunize to hangups.
+* nproc: (coreutils)nproc invocation.           Print the number of processors.
+* numfmt: (coreutils)numfmt invocation.         Reformat numbers.
+* od: (coreutils)od invocation.                 Dump files in octal, etc.
+* paste: (coreutils)paste invocation.           Merge lines of files.
+* pathchk: (coreutils)pathchk invocation.       Check file name portability.
+* pr: (coreutils)pr invocation.                 Paginate or columnate files.
+* printenv: (coreutils)printenv invocation.     Print environment variables.
+* printf: (coreutils)printf invocation.         Format and print data.
+* ptx: (coreutils)ptx invocation.               Produce permuted indexes.
+* pwd: (coreutils)pwd invocation.               Print working directory.
+* readlink: (coreutils)readlink invocation.     Print referent of a symlink.
+* realpath: (coreutils)realpath invocation.     Print resolved file names.
+* rm: (coreutils)rm invocation.                 Remove files.
+* rmdir: (coreutils)rmdir invocation.           Remove empty directories.
+* runcon: (coreutils)runcon invocation.         Run in specified SELinux CTX.
+* seq: (coreutils)seq invocation.               Print numeric sequences
+* sha1sum: (coreutils)sha1sum invocation.       Print or check SHA-1 digests.
+* sha2: (coreutils)sha2 utilities.              Print or check SHA-2 digests.
+* shred: (coreutils)shred invocation.           Remove files more securely.
+* shuf: (coreutils)shuf invocation.             Shuffling text files.
+* sleep: (coreutils)sleep invocation.           Delay for a specified time.
+* sort: (coreutils)sort invocation.             Sort text files.
+* split: (coreutils)split invocation.           Split into pieces.
+* stat: (coreutils)stat invocation.             Report file(system) status.
+* stdbuf: (coreutils)stdbuf invocation.         Modify stdio buffering.
+* stty: (coreutils)stty invocation.             Print/change terminal settings.
+* sum: (coreutils)sum invocation.               Print traditional checksum.
+* sync: (coreutils)sync invocation.             Synchronize memory to disk.
+* tac: (coreutils)tac invocation.               Reverse files.
+* tail: (coreutils)tail invocation.             Output the last part of files.
+* tee: (coreutils)tee invocation.               Redirect to multiple files.
+* test: (coreutils)test invocation.             File/string tests.
+* timeout: (coreutils)timeout invocation.       Run with time limit.
+* touch: (coreutils)touch invocation.           Change file timestamps.
+* tr: (coreutils)tr invocation.                 Translate characters.
+* true: (coreutils)true invocation.             Do nothing, successfully.
+* truncate: (coreutils)truncate invocation.     Shrink/extend size of a file.
+* tsort: (coreutils)tsort invocation.           Topological sort.
+* tty: (coreutils)tty invocation.               Print terminal name.
+* uname: (coreutils)uname invocation.           Print system information.
+* unexpand: (coreutils)unexpand invocation.     Convert spaces to tabs.
+* uniq: (coreutils)uniq invocation.             Uniquify files.
+* unlink: (coreutils)unlink invocation.         Removal via unlink(2).
+* uptime: (coreutils)uptime invocation.         Print uptime and load.
+* users: (coreutils)users invocation.           Print current user names.
+* vdir: (coreutils)vdir invocation.             List directories verbosely.
+* wc: (coreutils)wc invocation.                 Line, word, and byte counts.
+* who: (coreutils)who invocation.               Print who is logged in.
+- whoami: (coreutils)whoami invocation.         Print effective user ID.
+- yes: (coreutils)yes invocation.               Print a string indefinitely.
