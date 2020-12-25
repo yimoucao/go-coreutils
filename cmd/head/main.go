@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"container/list"
 	"flag"
 	"fmt"
 	"io"
@@ -39,7 +40,7 @@ const (
 	ByteMode
 )
 
-func head(m Mode, c int, file string, w io.Writer) error {
+func head(m Mode, n int, file string, w io.Writer) error {
 	f, err := os.Open(file)
 	defer f.Close()
 	if err != nil {
@@ -50,14 +51,37 @@ func head(m Mode, c int, file string, w io.Writer) error {
 	if m == ByteMode {
 		scanner.Split(bufio.ScanBytes)
 	}
-	for ; c > 0; c-- {
-		if !scanner.Scan() {
-			return scanner.Err()
+	if n >= 0 {
+		return scanWrite(n, scanner, w, m == LineMode)
+	}
+	return slidingScanWrite(-n, scanner, w, m == LineMode)
+}
+
+func scanWrite(n int, sc *bufio.Scanner, w io.Writer, newline bool) error {
+	for ; n > 0; n-- {
+		if !sc.Scan() {
+			return sc.Err()
 		}
-		w.Write(scanner.Bytes())
-		if m == LineMode {
+		w.Write(sc.Bytes())
+		if newline {
 			w.Write([]byte{'\n'})
 		}
 	}
 	return nil
+}
+
+func slidingScanWrite(width int, sc *bufio.Scanner, w io.Writer, newline bool) error {
+	bufl := list.New() // front oldes, back newest
+	i := 0
+	for ; sc.Scan(); i++ {
+		if i >= width {
+			v := bufl.Remove(bufl.Front())
+			w.Write(v.([]byte))
+			if newline {
+				w.Write([]byte{'\n'})
+			}
+		}
+		bufl.PushBack(sc.Bytes())
+	}
+	return sc.Err()
 }
