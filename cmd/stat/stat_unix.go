@@ -6,11 +6,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/user"
+	"strconv"
 	"syscall"
 	"time"
 )
-
-// TODO: get username for UID, groupname for GID
 
 func stat(filename string) error {
 	stat, err := os.Stat(filename)
@@ -30,8 +30,10 @@ func stat(filename string) error {
 	fmt.Printf("Links: %d\n", sys.Nlink)
 
 	fmt.Printf("Access: (%#o/%v)\t", stat.Mode(), stat.Mode())
-	fmt.Printf("Uid: %v\t", sys.Uid)
-	fmt.Printf("Gid: %v\n", sys.Gid)
+	userid, username := lookupUser(sys.Uid)
+	fmt.Printf("Uid: (%v/%v)\t", userid, username)
+	groupid, groupname := lookupGroup(sys.Gid)
+	fmt.Printf("Gid: (%v/%v)\n", groupid, groupname)
 
 	fmt.Printf("Access: %v\n", time.Unix(sys.Atim.Unix()))
 	fmt.Printf("Modify: %v\n", stat.ModTime())
@@ -40,27 +42,20 @@ func stat(filename string) error {
 	return nil
 }
 
-func modeTypeString(mode os.FileMode) string {
-	if mode&os.ModeDir != 0 {
-		return "directory"
+func lookupUser(uid uint32) (id, name string) {
+	uidStr := strconv.Itoa(int(uid))
+	usr, err := user.LookupId(uidStr)
+	if err != nil {
+		return uidStr, "unknown"
 	}
-	if mode&os.ModeSymlink != 0 {
-		return "symbolic link"
+	return usr.Uid, usr.Username
+}
+
+func lookupGroup(gid uint32) (id, name string) {
+	gidStr := strconv.Itoa(int(gid))
+	grp, err := user.LookupGroupId(gidStr)
+	if err != nil {
+		return gidStr, "unknown"
 	}
-	if mode&os.ModeNamedPipe != 0 {
-		return "fifo"
-	}
-	if mode&os.ModeSocket != 0 {
-		return "socket"
-	}
-	if mode&os.ModeDevice != 0 {
-		return "block special file"
-	}
-	if mode&os.ModeCharDevice != 0 {
-		return "character special file"
-	}
-	if mode&os.ModeIrregular != 0 {
-		return "irregular file"
-	}
-	return "regular file"
+	return grp.Gid, grp.Name
 }

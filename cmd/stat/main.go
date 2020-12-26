@@ -23,7 +23,7 @@ func main() {
 
 	for _, f := range files {
 		if err := stat(f); err != nil {
-			fmt.Print(err)
+			fmt.Println(err)
 		}
 	}
 }
