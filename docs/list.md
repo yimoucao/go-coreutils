@@ -1,12 +1,12 @@
 the list is from [here](https://github.com/coreutils/coreutils/blob/master/doc/coreutils.texi)
 
-* arch: (coreutils)arch invocation.             Print machine hardware name.
-* b2sum: (coreutils)b2sum invocation.           Print or check BLAKE2 digests.
-* base32: (coreutils)base32 invocation.         Base32 encode/decode data.
-* base64: (coreutils)base64 invocation.         Base64 encode/decode data.
-* basename: (coreutils)basename invocation.     Strip directory and suffix.
+- arch: (coreutils)arch invocation.             Print machine hardware name.
+- b2sum: (coreutils)b2sum invocation.           Print or check BLAKE2 digests.
+- base32: (coreutils)base32 invocation.         Base32 encode/decode data.
+- base64: (coreutils)base64 invocation.         Base64 encode/decode data.
+- basename: (coreutils)basename invocation.     Strip directory and suffix.
 * basenc: (coreutils)basenc invocation.         Encoding/decoding of data.
-* cat: (coreutils)cat invocation.               Concatenate and write files.
+- cat: (coreutils)cat invocation.               Concatenate and write files.
 * chcon: (coreutils)chcon invocation.           Change SELinux CTX of files.
 * chgrp: (coreutils)chgrp invocation.           Change file groups.
 * chmod: (coreutils)chmod invocation.           Change access permissions.
@@ -17,7 +17,7 @@ the list is from [here](https://github.com/coreutils/coreutils/blob/master/doc/c
 * cp: (coreutils)cp invocation.                 Copy files.
 * csplit: (coreutils)csplit invocation.         Split by context.
 * cut: (coreutils)cut invocation.               Print selected parts of lines.
-* date: (coreutils)date invocation.             Print/set system date and time.
+- date: (coreutils)date invocation.             Print/set system date and time.
 * dd: (coreutils)dd invocation.                 Copy and convert a file.
 * df: (coreutils)df invocation.                 Report file system disk usage.
 * dir: (coreutils)dir invocation.               List directories briefly.

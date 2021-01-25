@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 struct utmpx {
 	short		ut_type;
@@ -20,4 +22,8 @@ struct utmpx {
 
 func main() {
 	who()
+}
+
+func who() {
+	fmt.Println("not implemented yet")
 }

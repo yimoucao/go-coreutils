@@ -27,6 +27,8 @@ totalhigh and freehigh are specific to i386 Linux
 // 21:47  up 10 days,  6:47, 6 users, load averages: 1.99 2.17 2.09
 // time now, time since boot, ???, # of users, load average
 
+// TODO: for loadavg, use '/proc/loadavg' ?
+
 func main() {
 	boottime, err := coreutils.BootTime()
 	if err != nil {
