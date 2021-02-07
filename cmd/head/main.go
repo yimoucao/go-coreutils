@@ -33,6 +33,7 @@ func main() {
 
 }
 
+// Mode can be LineMode or ByteMode
 type Mode uint8
 
 const (

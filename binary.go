@@ -6,7 +6,8 @@ import (
 	"unsafe"
 )
 
-var DetermEndianErr = errors.New("could not determine native endianness.")
+// ErrDetermEndian not able to get native endian
+var ErrDetermEndian = errors.New("could not determine native endianness")
 
 // NativeEndian represents system's native endianess
 var NativeEndian binary.ByteOrder = func() binary.ByteOrder {
@@ -29,7 +30,7 @@ func GetNativeEndian() (binary.ByteOrder, error) {
 	case [2]byte{0xAB, 0xCD}:
 		nativeEndian = binary.BigEndian
 	default:
-		return nil, DetermEndianErr
+		return nil, ErrDetermEndian
 	}
 	return nativeEndian, nil
 }

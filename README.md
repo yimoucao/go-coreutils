@@ -17,3 +17,4 @@ Reinventing GNU coreutils using Go
 |module | difficulty | comments |
 |-------|------------|----------|
 |uptime | ** | macOS, windows syscall API, implement utmpx |
+|b2sum| ** | crypto hashing|

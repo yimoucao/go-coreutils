@@ -18,4 +18,4 @@
 .vscode/
 .idea/
 
-/build
+/_out
