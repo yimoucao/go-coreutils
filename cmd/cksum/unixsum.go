@@ -2,7 +2,7 @@ package main
 
 import "hash"
 
-// The size of a cksum value
+// Size is size of a cksum value
 const Size = 4
 
 var crctab = [256]uint32{

@@ -22,7 +22,7 @@ func Sysinfo() {
 
 var timeZero = time.Time{}
 var nativeEndian = func() binary.ByteOrder {
-	r, err := NativeEndian()
+	r, err := GetNativeEndian()
 	if err != nil {
 		panic(err)
 	}

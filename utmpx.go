@@ -68,7 +68,7 @@ func readAll(reader io.Reader) ([]*Utmpx, error) {
 
 func readEnt(reader io.Reader) (*Utmpx, error) {
 	var u Utmpx
-	if err := binary.Read(reader, nativeEndian, &u); err != nil {
+	if err := binary.Read(reader, NativeEndian, &u); err != nil {
 		return nil, err
 	}
 	return &u, nil

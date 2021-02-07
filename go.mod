@@ -1,5 +1,8 @@
 module github.com/yimoucao/go-coreutils
 
-go 1.14
+go 1.15
 
-require golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
+require (
+	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
+	golang.org/x/sys v0.0.0-20201231184435-2d18734c6014
+)
