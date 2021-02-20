@@ -9,8 +9,8 @@ Reinventing GNU coreutils using Go
 ## Priority
 1. core functionality
 2. output format comformant
-3. wildcards, globs (go1.16 [io/fs](https://tip.golang.org/doc/go1.16#fs))
-4. ~~input flags comformant, bsd/posix compliant~~
+3. input flags comformant, ~~unix/bsd/gnu options comliance~~
+4. wildcards, globs (go1.16 [io/fs](https://tip.golang.org/doc/go1.16#fs))
 
 ## Difficulty
 
