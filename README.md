@@ -7,10 +7,10 @@ Reinventing GNU coreutils using Go
 - No cheating, for example, use exec.Command() directly
 
 ## Priority
-- core functionality
-- output format comformant
-- input flags comformant, bsd/posix compliant
-- wildcards, globs (incoming go1.16 [io/fs](https://tip.golang.org/doc/go1.16#fs))
+1. core functionality
+2. output format comformant
+3. wildcards, globs (go1.16 [io/fs](https://tip.golang.org/doc/go1.16#fs))
+4. ~~input flags comformant, bsd/posix compliant~~
 
 ## Difficulty
 
@@ -18,3 +18,7 @@ Reinventing GNU coreutils using Go
 |-------|------------|----------|
 |uptime | ** | macOS, windows syscall API, implement utmpx |
 |b2sum| ** | crypto hashing|
+
+
+### References
+[GNU coreutils github mirror](//https://github.com/coreutils/coreutils)
