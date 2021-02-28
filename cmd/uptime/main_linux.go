@@ -6,8 +6,10 @@ import (
 )
 
 func main() {
-	if err := syscall.Sysinfo(); err != nil {
+	sysinfo := &syscall.Sysinfo_t{}
+	if err := syscall.Sysinfo(sysinfo); err != nil {
 		fmt.Println(err)
+		return
 	}
-	syscall.synn
+	fmt.Printf("%+v\n", sysinfo)
 }

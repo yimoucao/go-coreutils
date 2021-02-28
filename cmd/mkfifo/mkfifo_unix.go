@@ -9,5 +9,5 @@ import (
 )
 
 func mkfifo(fname string, mode os.FileMode) error {
-	return syscall.Mkfifo(filename, 0666)
+	return syscall.Mkfifo(fname, 0666)
 }
