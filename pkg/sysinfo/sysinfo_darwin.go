@@ -1,10 +1,12 @@
-package coreutils
+package sysinfo
 
 import (
 	"bytes"
 	"encoding/binary"
 	"syscall"
 	"time"
+
+	"github.com/yimoucao/go-coreutils/pkg/endian"
 )
 
 // TODO
@@ -21,13 +23,6 @@ func Sysinfo() {
 }
 
 var timeZero = time.Time{}
-var nativeEndian = func() binary.ByteOrder {
-	r, err := GetNativeEndian()
-	if err != nil {
-		panic(err)
-	}
-	return r
-}()
 
 func BootTime() (time.Time, error) {
 	v, err := syscall.Sysctl("kern.boottime")
@@ -41,7 +36,7 @@ func BootTime() (time.Time, error) {
 	}
 
 	var tv syscall.Timeval
-	if err := binary.Read(buf, nativeEndian, &tv); err != nil {
+	if err := binary.Read(buf, endian.NativeEndian, &tv); err != nil {
 		return timeZero, err
 	}
 
@@ -71,7 +66,7 @@ func LoadAvg() ([3]float32, error) {
 	}
 
 	var ldavg loadavg
-	if err := binary.Read(buf, nativeEndian, &ldavg); err != nil {
+	if err := binary.Read(buf, endian.NativeEndian, &ldavg); err != nil {
 		return res, err
 	}
 
@@ -95,7 +90,7 @@ func Totalram() uint64 {
 	}
 
 	var res uint64
-	if err := binary.Read(buf, nativeEndian, &res); err != nil {
+	if err := binary.Read(buf, endian.NativeEndian, &res); err != nil {
 		return 0
 	}
 

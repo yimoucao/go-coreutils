@@ -1,4 +1,4 @@
-package coreutils
+package endian
 
 import (
 	"encoding/binary"

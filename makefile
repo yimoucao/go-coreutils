@@ -1,11 +1,6 @@
 
 GO = go
-TARGETS = arch b2sum base32 base64 basename cat
-TARGETS += chgrp chmod chown chroot cksum cp csplit cut
-TARGETS += date dd dirname
-TARGETS += echo factor false head hostid hostname kill logname md5sum
-TARGETS += mkdir mkfifo mktemp pwd stat tail true uname uptime
-TARGETS += who whoami yes
+TARGETS = $(shell ls ./cmd)
 OUTDIR = _out
 
 .PHONY: all
