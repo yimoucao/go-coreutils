@@ -47,7 +47,7 @@ func parseFileMode(modstr string, old os.FileMode) (os.FileMode, error) {
 	// chmod u+x
 	// symbolic: [ugoa][[-+=][perms...]...] perms: rwxXst
 	// octal: 0777, 0666
-	modUint, err := strconv.ParseUint(modstr, 8, 0)
+	modUint, err := strconv.ParseUint(modstr, 8, 32)
 	if err == nil {
 		return os.FileMode(modUint), nil
 	}
