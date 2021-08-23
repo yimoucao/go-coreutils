@@ -3,9 +3,10 @@ package main
 import (
 	"encoding/base32"
 	"flag"
-	"fmt"
 	"io"
 	"os"
+
+	"github.com/yimoucao/go-coreutils/pkg/exit"
 )
 
 var (
@@ -18,11 +19,6 @@ func init() {
 	flag.StringVar(&outputFile, "o", "", "output_file")
 }
 
-func errExit(err error) {
-	fmt.Fprintln(os.Stderr, err)
-	os.Exit(1)
-}
-
 func getInput() io.ReadCloser {
 	if inputFile == "" {
 		inputFile = flag.Arg(0)
@@ -32,7 +28,7 @@ func getInput() io.ReadCloser {
 	}
 	f, err := os.Open(inputFile)
 	if err != nil {
-		errExit(err)
+		exit.Error(err)
 	}
 	return f
 }
@@ -43,7 +39,7 @@ func getOutput() io.WriteCloser {
 	}
 	f, err := os.Create(outputFile)
 	if err != nil {
-		errExit(err)
+		exit.Error(err)
 	}
 	return f
 }
@@ -57,7 +53,7 @@ func main() {
 	wc := base32.NewEncoder(base32.StdEncoding, output)
 	_, err := io.Copy(wc, input)
 	if err != nil {
-		errExit(err)
+		exit.Error(err)
 	}
 	wc.Close()
 	output.Write([]byte{'\n'})

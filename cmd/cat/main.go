@@ -2,17 +2,13 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"io"
 	"os"
+
+	"github.com/yimoucao/go-coreutils/pkg/exit"
 )
 
 //flags
-
-func errExit(a ...interface{}) {
-	fmt.Fprint(os.Stderr, a...)
-	os.Exit(1)
-}
 
 func main() {
 	flag.Parse()
@@ -29,7 +25,7 @@ func main() {
 func catFile(fname string) {
 	f, err := os.Open(fname)
 	if err != nil {
-		errExit(err)
+		exit.Error(err)
 	}
 	defer f.Close()
 

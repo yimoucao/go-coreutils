@@ -7,6 +7,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/yimoucao/go-coreutils/pkg/exit"
 	"github.com/yimoucao/go-coreutils/pkg/ranges"
 )
 
@@ -40,7 +41,7 @@ func main() {
 
 	range_, err := ranges.Parse(rangeStr)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		exit.Error(err)
 		return
 	}
 	cutOpts := &cutOpts{Mode: mode, Range: range_, Delim: delim}
