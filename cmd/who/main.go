@@ -3,6 +3,35 @@ package main
 import "fmt"
 
 /*
+NAME
+       who - show who is logged on
+
+SYNOPSIS
+       who [OPTION]... [ FILE | ARG1 ARG2 ]
+
+DESCRIPTION
+       Print information about users who are currently logged in.
+
+       -a, --all
+              same as -b -d --login -p -r -t -T -u
+
+       -b, --boot
+              time of last system boot
+
+       -d, --dead
+              print dead processes
+
+       -H, --heading
+              print line of column headings
+
+       --ips  print  ips  instead of hostnames. with --lookup, canonicalizes based on stored IP, if available, rather
+              than stored hostname
+
+       -l, --login
+              print system login processes
+*/
+
+/*
 struct utmpx {
 	short		ut_type;
 	struct timeval	ut_tv;
