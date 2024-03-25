@@ -11,6 +11,10 @@ import (
 )
 
 // References:
+// https://en.wikipedia.org/wiki/Utmp
+// In sum, depends on linux/unix flavor.utmpx is specified in POSIX however linux
+// variants chose different implementations/locations.
+// TODO: find out what each linux distro does...
 // https://github.com/ericlagergren/go-gnulib/tree/master/utmp
 // https://github.com/patrickToca/go-coreutils/blob/master/who/who.go
 
