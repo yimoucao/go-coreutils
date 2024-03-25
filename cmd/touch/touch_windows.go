@@ -1,3 +1,7 @@
 package main
 
-func touchOne(opts Options, fname string) error
+import "errors"
+
+func touchOne(opts Options, fname string) error {
+	return errors.New("not implemetned")
+}

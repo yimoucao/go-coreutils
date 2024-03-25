@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/yimoucao/go-coreutils"
+	"github.com/yimoucao/go-coreutils/pkg/sysinfo"
 )
 
 /*
@@ -30,7 +30,7 @@ totalhigh and freehigh are specific to i386 Linux
 // TODO: for loadavg, use '/proc/loadavg' ?
 
 func main() {
-	boottime, err := coreutils.BootTime()
+	boottime, err := sysinfo.BootTime()
 	if err != nil {
 		panic(err)
 	}
@@ -40,12 +40,12 @@ func main() {
 	delta := now.Sub(boottime)
 	fmt.Println(delta)
 
-	load, err := coreutils.LoadAvg()
+	load, err := sysinfo.LoadAvg()
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("%.2f %.2f %.2f\n", load[0], load[1], load[2])
 
-	totalram := coreutils.Totalram()
+	totalram := sysinfo.Totalram()
 	fmt.Println("total ram: ", totalram)
 }
